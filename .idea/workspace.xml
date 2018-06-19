@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ba56a98-1310-4cd4-a865-84acc6fcc9d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/stylesheets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/stylesheets/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/target/classes/public/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -55,8 +53,8 @@
       <file leaf-file-name="Main.class" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/target/classes/com/example/Main.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+            <state relative-caret-position="119">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -79,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="272">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -91,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/public/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -119,8 +117,8 @@
         <option value="$PROJECT_DIR$/target/classes/templates/index.html" />
         <option value="$PROJECT_DIR$/target/classes/public/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/public/stylesheets/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       </list>
     </option>
   </component>
@@ -564,17 +562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/com/example/Main.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/classes/public/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -606,20 +597,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/example/Main.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
