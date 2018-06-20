@@ -29,3 +29,14 @@ input[type=submit]:hover {
     background-color: #f2f2f2;
     padding: 20px;
 }
+
+.dropdown > .dropdown-menu {
+  display: none; //hides .dropdown-menu directly inside .dropdown
+}
+.dropdown.open > .dropdown-menu {
+  display: block; //shows .dropdown-menu directly inside .dropdown if it has class .open
+}
+
+table {
+    border: 1px solid black;
+}
