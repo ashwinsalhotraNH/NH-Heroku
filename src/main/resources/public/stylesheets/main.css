@@ -37,6 +37,16 @@ input[type=submit]:hover {
   display: block; //shows .dropdown-menu directly inside .dropdown if it has class .open
 }
 
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
 table {
-    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
 }
