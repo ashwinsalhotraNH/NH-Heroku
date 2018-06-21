@@ -56,6 +56,10 @@ input[type=submit]:hover {
     padding-left:120px;
 }
 
+.input-group>input{
+    padding:10px 80px 10px 15px;
+}
+
 .btn.btn-default {
     margin-top: 6px;
     padding:9px
