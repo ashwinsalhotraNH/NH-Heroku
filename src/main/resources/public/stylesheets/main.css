@@ -37,13 +37,23 @@ input[type=submit]:hover {
   display: block; //shows .dropdown-menu directly inside .dropdown if it has class .open
 }
 
+.navbar-header{
+    padding-top:5px;
+}
+
 .navbar.navbar-default {
     background-color: #01A101;
     border-color: #01A101;
 }
 
-.navbar-default .navbar-nav>li>a {
-    colour: white;
+.nav.SCVNav.navbar-nav>li>a{
+    color:white;
+    font-size:10px;
+    padding-left:30px;
+}
+
+.input-group{
+    padding-left:120px;
 }
 
 .btn.btn-default {
