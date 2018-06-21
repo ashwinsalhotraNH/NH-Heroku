@@ -37,7 +37,7 @@ input[type=submit]:hover {
   display: block; //shows .dropdown-menu directly inside .dropdown if it has class .open
 }
 
-.navbar-default {
+.navbar.navbar-default {
     background-color: #01A101;
     border-color: #01A101;
 }
@@ -46,10 +46,9 @@ input[type=submit]:hover {
     colour: white;
 }
 
-.input-group-btn {
-    display: inline-block;
-    padding: 9px 12px;
-    margin-bottom: -6px;
+.btn.btn-default {
+    margin-top: 6px;
+    padding:9px
 }
 
 table {
