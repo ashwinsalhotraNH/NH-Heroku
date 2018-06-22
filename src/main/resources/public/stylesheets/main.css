@@ -34,10 +34,11 @@ input[type=submit]:hover {
     border-radius:0px;
 }
 
-.nav.SCVNav.navbar-nav>li>a{
+.nav.SCVNav.navbar-nav>li>p{
     color:white;
     font-size:10px;
     padding-left:30px;
+    padding-top:18px;
 }
 
 .backToSF{
