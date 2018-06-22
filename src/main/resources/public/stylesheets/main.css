@@ -40,6 +40,13 @@ input[type=submit]:hover {
     padding-left:30px;
 }
 
+.backToSF{
+       color:white;
+       font-size:10px;
+       float:right;
+       padding-top:18px;
+}
+
 .input-group{
     padding-left:120px;
 }
