@@ -24,10 +24,6 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-.navbar{
-    border-radius:0px;
-}
-
 .navbar-header{
     padding-top:5px;
 }
@@ -35,6 +31,7 @@ input[type=submit]:hover {
 .navbar.navbar-default {
     background-color: #01A101;
     border-color: #01A101;
+    border-radius:0px;
 }
 
 .nav.SCVNav.navbar-nav>li>a{
