@@ -1,28 +1,5 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
 
 .navbar-header{
     padding-top:5px;
@@ -46,19 +23,6 @@ input[type=submit]:hover {
        font-size:10px;
        float:right;
        padding-top:18px;
-}
-
-.input-group{
-    padding-left:120px;
-}
-
-.input-group>input{
-    padding:10px 80px 10px 15px;
-}
-
-.btn.btn-default {
-    margin-top: 6px;
-    padding:9px
 }
 
 .floatLeft { width: 50%; float: left; }
@@ -88,3 +52,35 @@ input[type=submit]:hover {
     color: white;
 }
 
+.search-container {
+  float: right;
+  padding-left:180px;
+}
+
+
+    input[type=text] {
+      padding: 5px;
+      margin-top: 2px;
+      font-size: 16px;
+      border: none;
+      width:300px;
+    }
+
+    .search-container button {
+      float: right;
+      padding: 5px 10px;
+      margin-top: 2px;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+ .search-container button {
+    padding: 9.7px;
+  }
+
+   .search-container button:hover {
+      background: #ccc;
+    }
