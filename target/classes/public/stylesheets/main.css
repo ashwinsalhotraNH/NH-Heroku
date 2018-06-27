@@ -57,8 +57,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding-left:180px;
 }
 
-
-    input[type=text] {
+input[type=text] {
       padding: 5px;
       margin-top: 2px;
       font-size: 16px;
@@ -66,7 +65,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       width:300px;
     }
 
-    .search-container button {
+.search-container button {
       float: right;
       padding: 5px 10px;
       margin-top: 2px;
@@ -77,10 +76,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
       cursor: pointer;
     }
 
- .search-container button {
+.search-container button {
     padding: 9.7px;
   }
 
-   .search-container button:hover {
+.search-container button:hover {
       background: #ccc;
     }
