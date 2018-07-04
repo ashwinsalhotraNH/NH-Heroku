@@ -91,7 +91,7 @@ input[type=text] {
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #111;
+        background-color: #f3f3f3;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
@@ -107,20 +107,19 @@ input[type=text] {
     }
 
     .sidenav a:hover {
-        color: #f1f1f1;
+        color: #1b1a1a;
     }
 
     .sidenav .closebtn {
         position: absolute;
         top: 0;
         right: 25px;
-        font-size: 36px;
+        font-size: 25px;
         margin-left: 50px;
     }
 
     #main {
         transition: margin-left .5s;
-        padding: 16px;
     }
 
     @media screen and (max-height: 450px) {
