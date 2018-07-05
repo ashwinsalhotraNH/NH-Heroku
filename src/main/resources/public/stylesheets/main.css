@@ -130,9 +130,10 @@ input[type=text] {
  #records{
         border-collapse: collapse;
         margin-top: 20px;
-        width: 100%;
+        width: 30%;
         background: #fff;
     	float:left;
+    	font-size:12px;
     }
     #records th, #records td{    	
     	border: 1px solid #d6d6d6;
