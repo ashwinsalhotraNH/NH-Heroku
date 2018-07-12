@@ -143,7 +143,7 @@ input[type=text] {
         background-color: #4CAF50;
         color: #fff;
     }
-    #records tr:nth-child(odd, #records1 tr:nth-child(odd){
+    #records tr:nth-child(odd), #records1 tr:nth-child(odd{
         color: #000000;
         background-color: #DDFFFF;
     }
