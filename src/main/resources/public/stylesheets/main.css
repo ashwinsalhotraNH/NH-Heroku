@@ -147,4 +147,5 @@ input[type=text] {
     }
     #details, #serviceDetails{
     	padding-left:20px;
+    	display: inline-table;
     }
