@@ -127,25 +127,24 @@ input[type=text] {
       .sidenav a {font-size: 18px;}
     }
 
- #records, #records1{
+ #records, #records1, #records2{
         border-collapse: collapse;
         width: 30%;
         background: #fff;
     	font-size:12px;
     }
-    #records th, #records td, #records1 th, #records1 td{
+    #records th, #records td, #records1 th, #records1 td, #records2 th, #records2 td{
     	border: 1px solid #d6d6d6;
 		padding: 10px;
     }
-    #records th, #records1 th{
+    #records th, #records1 th, #records2 th{
         background-color: #4CAF50;
         color: #fff;
     }
-    #records tr:nth-child(odd), #records1 tr:nth-child(odd){
+    #records tr:nth-child(odd), #records1 tr:nth-child(odd), #records2 tr:nth-child(odd){
         color: #000000;
         background-color: #e7e7e7;
     }
-    #details, #serviceDetails{
+    #details, #serviceDetails, #serviceActivities{
     	padding-left:20px;
-    	display: inline-table;
     }
