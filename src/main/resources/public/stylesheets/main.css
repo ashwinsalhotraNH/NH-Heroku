@@ -129,10 +129,8 @@ input[type=text] {
 
  #records, #records1{
         border-collapse: collapse;
-        margin-top: 20px;
         width: 30%;
         background: #fff;
-    	float:left;
     	font-size:12px;
     }
     #records th, #records td, #records1 th, #records1 td{
@@ -145,9 +143,8 @@ input[type=text] {
     }
     #records tr:nth-child(odd), #records1 tr:nth-child(odd){
         color: #000000;
-        background-color: #DDFFFF;
+        background-color: #e7e7e7;
     }
-    #details p{
-    	color:#000;
-    	font-size:2em;
+    #details, #serviceDetails{
+    	padding-left:20px;
     }
