@@ -149,6 +149,6 @@ input[type=text] {
     	padding-left:20px;
     }
 
-    #contactHeader, #contcId, #ServiceIdHeader, #serviceId,{
+    #contactHeader, #contcId, #ServiceIdHeader, #serviceId{
         display:none;
     }
