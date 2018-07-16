@@ -146,10 +146,16 @@ input[type=text] {
         background-color: #e7e7e7;
     }
     #details, #serviceDetails, #serviceActivities{
-    	 	padding-left:30px;
+    	 	padding:25px;
             display:inline-table;
             width:25%;
+            border:1px solid #ececec;
+            border-radius:10px;
     }
+
+    .allTables{
+            padding-left:20px;
+        }
 
     #contactHeader, #contcId, #ServiceIdHeader, #serviceId{
         display:none;
