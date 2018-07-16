@@ -146,11 +146,9 @@ input[type=text] {
         background-color: #e7e7e7;
     }
     #details, #serviceDetails, #serviceActivities{
-    	 	padding:25px;
+    	 	padding:5px 25px 5px 25px;
             display:inline-table;
             width:25%;
-            border:1px solid #ececec;
-            border-radius:10px;
     }
 
     .allTables{
