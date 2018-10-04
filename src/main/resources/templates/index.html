@@ -14,12 +14,12 @@
 
 <script>
 var app = angular.module('MyApp',[]);
-var app1 = angular.module('MyApp1',[]);
 var mytestvar;
 var mytestvar1;
+
     //Contact Information App
     app.controller('myController',['$scope',function($scope) {
-	$scope.ContactData =  Visualforce.remoting.Manager.invokeAction(
+    $scope.ContactData =  Visualforce.remoting.Manager.invokeAction(
         '{!$RemoteAction.SCVRemoting.getContacts}',
          function(result, event) {
              $scope.$apply(function() {
@@ -30,29 +30,11 @@ var mytestvar1;
          });
  }]);
     //Services by contactId App
-    /*app.controller('myController1',['$scope',function($scope) {
+
+    app.controller('myController1',['$scope',function($scope) {
      $scope.ServicesData =  Visualforce.remoting.Manager.invokeAction(
         '{!$RemoteAction.SCVRemoting.getServicesByContactId}', '0036E00000PyKfjQAF',
          function(result, event){
-             alert('test');
-             $scope.$apply(function() {
-                console.log(result);
-                $scope.svdata = result;
-                mytestvar1 = result;
-            });
-         });
- }]);*/
-
-   function serviceDetails() {
-       var val;
-       val = document.getElementById('serviceId').innerText;
-       alert('Id --->'+val);
-       //Services by contactId App
-     app.controller('myController1',['$scope',function($scope) {
-     $scope.ServicesData =  Visualforce.remoting.Manager.invokeAction(
-        '{!$RemoteAction.SCVRemoting.getServicesByContactId}', val,
-         function(result, event){
-             alert('test');
              $scope.$apply(function() {
                 console.log(result);
                 $scope.svdata = result;
@@ -60,104 +42,250 @@ var mytestvar1;
             });
          });
  }]);
-       }
+
+/*function serviceDetails() {
+       var val;
+       val = document.getElementById('serviceId').innerText;
+       alert('Id --->'+val);
+       }*/
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+    function getRecordsDetails()
+        {
+            var fName = document.getElementById("firstName").value;
+            var lName = document.getElementById("lastName").value;
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SCVRemoting.getContactsByName}',
+                fName, lName,
+                function(result, event){
+                    if (event.status){
+                        var l = result.length;
+                        if(l==0)
+                        {
+                            document.getElementById("details").innerHTML='<p>No Results!</p>';
+                        }
+                        else{
+                                   document.getElementById("details").innerHTML='<p>Personal Details</p>';
+                            var markup ='<table id="records">';
+                            markup += '<h6>Personal Details</h6><tr><th>Name</th><th>Date of Birth</th><th id=contactHeader>Contact Id</th><th>Email</th></tr>';
+                            for(var i=0; i<l;i++)
+                            {
+
+                                var recordDetail = '<tr>' +
+                                    "<td onclick=getServiceFromContact(contcId)>" +result[i].Name + "</td>" +
+                                    "<td>" + result[i].Birthdate + "</td>" +
+                                    "<td id=contcId>" + result[i].Id + "</td>" +
+                                    "<td>" + result[i].Email + "</td>" +
+                                    '</tr>';
+                                markup += recordDetail;
+                            }
+                            document.getElementById("details").innerHTML = markup;
+                        }
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("details").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }
+                    else{
+                        document.getElementById("details").innerHTML = event.message;
+                    }
+                },
+                {escape: true}
+            );
+        }
+
+            function getServiceFromContact()
+        {
+            var conId = document.getElementById("contcId").innerText;
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SCVRemoting.getServicesByContactId}',
+                conId,
+                function(result, event){
+                    if (event.status){
+                        var l = result.length;
+                        if(l==0)
+                        {
+                            document.getElementById("serviceDetails").innerHTML='<p>No Services Found!</p>';
+                        }
+                        else{
+                                   document.getElementById("serviceDetails").innerHTML='<p>Service Details</p>';
+                            var markup ='<table id="records1">';
+                            markup += '<h6>Service Details</h6><tr><th>Product Name</th><th>Name</th><th>Status</th><th id=ServiceIdHeader>Service Id</th><th>Product Description</th></tr>';
+                            for(var i=0; i<l;i++)
+                            {
+
+                                var recordDetail = '<tr>' +
+                                    "<td onclick=getActivitiesFromService()>" +result[i].Product_Name__c + "</td>" +
+                                    "<td>" +result[i].Name + "</td>" +
+                                    "<td>" + result[i].Status__c + "</td>" +
+                                    "<td id=serviceId>" + result[i].Id + "</td>" +
+                                    "<td>" + result[i].Product_Description__c + "</td>" +
+                                    '</tr>';
+                                markup += recordDetail;
+                            }
+                            document.getElementById("serviceDetails").innerHTML = markup;
+                        }
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("serviceDetails").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }
+                    else{
+                        document.getElementById("details").innerHTML = event.message;
+                    }
+                },
+                {escape: true}
+            );
+        }
+
+         function getActivitiesFromService()
+        {
+            var servId = document.getElementById("serviceId").innerText;
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SCVRemoting.getActivitesByServiceId}',
+                servId,
+                function(result, event){
+                    if (event.status){
+                        var l = result.length;
+                        if(l==0)
+                        {
+                            document.getElementById("serviceActivities").innerHTML='<p>No Activities Found!</p>';
+                        }
+                        else{
+                                   document.getElementById("serviceActivities").innerHTML='<p>serviceActivities</p>';
+                            var markup ='<table id="records2">';
+                            markup += '<h6>SCV Activities</h6><tr><th>Name</th><th>Outcome</th><th id=ServiceIdHeader>Service Id</th><th>DateTime</th></tr>';
+                            for(var i=0; i<l;i++)
+                            {
+
+                                var recordDetail = '<tr>' +
+                                    "<td>" +result[i].Name + "</td>" +
+                                    "<td>" + result[i].Outcome__c + "</td>" +
+                                    "<td id=serviceId>" + result[i].Id + "</td>" +
+                                    "<td>" + result[i].DateTime__c + "</td>" +
+                                    '</tr>';
+                                markup += recordDetail;
+                            }
+                            document.getElementById("serviceActivities").innerHTML = markup;
+                        }
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("serviceActivities").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }
+                    else{
+                        document.getElementById("details").innerHTML = event.message;
+                    }
+                },
+                {escape: true}
+            );
+        }
+
+                 function getServiceFromServiceId()
+        {
+            var servId = document.getElementById("serviceId").innerText;
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SCVRemoting.getServicesById}',
+                servId,
+                function(result, event){
+                    if (event.status){
+                        var l = result.length;
+                        if(l==0)
+                        {
+                            document.getElementById("serviceFromServices").innerHTML='<p>No Activities Found!</p>';
+                        }
+                        else{
+                                   document.getElementById("serviceFromServices").innerHTML='<p>serviceFromServices</p>';
+                            var markup ='<table id="records3">';
+                            markup += '<h6>SCV Activities</h6><tr><th>Name</th><th>Outcome</th><th>Service Id</th><th>DateTime</th></tr>';
+                            for(var i=0; i<l;i++)
+                            {
+
+                                var recordDetail = '<tr>' +
+                                    "<td>" +result[i].Name + "</td>" +
+                                    "<td>" + result[i].Outcome__c + "</td>" +
+                                    "<td>" + result[i].Id + "</td>" +
+                                    "<td>" + result[i].DateTime__c + "</td>" +
+                                    '</tr>';
+                                markup += recordDetail;
+                            }
+                            document.getElementById("serviceFromServices").innerHTML = markup;
+                        }
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("serviceFromServices").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }
+                    else{
+                        document.getElementById("details").innerHTML = event.message;
+                    }
+                },
+                {escape: true}
+            );
+        }
 </script>
 
 <body>
 
 <div ng-app="MyApp">
-    <div ng-controller="myController">
-        <div class="container">
-            <div class="row">
-
-                <div class="col">
-                    <div class="floatLeft">
-                        <h4>Personal Details</h4>
-                        <table id = "customers">
-
-                            <thead>
-                            <th>
-                                First Name
-                            </th>
-                            <th>
-                                Last Name
-                            </th>
-                            <th>
-                                Id
-                            </th>
-                            </thead>
-                            <tr ng-repeat="Contactvar in ctdata" >
-                                <td>{{Contactvar.FirstName}}</td>
-                                <td>{{Contactvar.LastName}}</td>
-                                <td id="serviceId" onclick="serviceDetails()">{{Contactvar.Id}}</td>
-                            </tr>
-                            <tbody>
-                            </tbody>
-
-                            <thead>
-                            <th>
-                                Preferred Name
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            </thead>
-                            <tr ng-repeat="Contactvar in ctdata">
-                                <td>{{Contactvar.Preferred_Name__c}}</td>
-                                <td>{{Contactvar.Email}}</td>
-                            </tr>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-                <div ng-app="MyApp1">
-                    <div ng-controller="myController1">
-                        <div class="col">
-                            <div class="floatRight">
-                                <h4>Services</h4>
-                                <table id = "customers">
+        <form id="searchBar">
+            <div>Search Contact:</div>
+            <input type="text" id="firstName" placeholder="First Name..." />
+            <input type="text" id="lastName" placeholder="Last Name..." />
+            <input type="submit" value="Find" id="btnSearch" onclick="getRecordsDetails(); closeNav();" />
+        </form>
 
-                                    <thead>
-                                    <th>
-                                        Product Description
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                    </thead>
-                                    <tr ng-repeat="Servicevar in svdata">
-                                        <td>{{Servicevar.Name}}</td>
-                                        <td>{{Servicevar.Status__c}}</td>
-                                    </tr>
-                                    <tbody>
-                                    </tbody>
-
-                                    <thead>
-                                    <th>
-                                        Preferred Name
-                                    </th>
-                                    <th>
-                                        Email
-                                    </th>
-                                    </thead>
-                                    <tr ng-repeat="Servicevar in svdata">
-                                        <td>{{Servicevar.Site__r.Name}}</td>
-                                        <td>{{Servicevar.Email}}</td>
-                                    </tr>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>   </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- Use any element to open the sidenav -->
+                    <span onclick="openNav()" style="color:white;font-weight:bold"> = </span>
+                    <a href="https://nuffieldhealth-crm--scv--c.cs85.visual.force.com/apex/contactRemoting"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Nuffield-Health.png"
+                                                                                                                 alt="Nuffield Health" width="100" height="45"/></a>
+                </div>
+                <ul class="nav navbar-nav SCVNav">
+                    <li><p href="#">Single Customer View</p></li>
+                </ul>
+                <form class="navbar-form navbar-left" action="/action_page.php">
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search"/>
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </form>
+                <a class="backToSF" href="https://nuffieldhealth-crm--scv--c.cs85.visual.force.com">Back To Salesforce
+                    SCV</a>
+            </div>
+        </nav>
+
+        <div class="allTables">
+            <div id="details"> <span onclick="openNav()" style="color:black;font-weight:bold"> Click me to search for a Contact... </span></div>
+            <div id="serviceDetails" ></div>
+            <div id="serviceActivities" ></div>
+            <div id="serviceFromServices" ></div>
+        </div>
+
+    </div> <!-- #End of Main -->
+</div> <!-- #End of MyApp -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
